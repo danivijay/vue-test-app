@@ -1,5 +1,5 @@
 <template>
-<h1>hello world</h1>
+<h1>{{msg}}</h1>
 </template>
 
 <script>
@@ -7,6 +7,7 @@ export default {
   name: 'nameList',
   data () {
     return {
+      msg: "hello world 2"
     }
   }
 }
