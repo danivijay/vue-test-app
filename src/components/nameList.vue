@@ -1,5 +1,5 @@
 <template>
-<h1>{{msg}}</h1>
+<h1><a href="./api/">{{msg}}</a></h1>
 </template>
 
 <script>

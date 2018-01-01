@@ -17,5 +17,6 @@ export default new Router({
       name: 'apiFetch',
       component: apiFetch
     }
-  ]
+  ],
+  mode: 'history'
 })
