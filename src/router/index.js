@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import nameList from '@/components/nameList'
+import apiFetch from '@/components/apiFetch'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
       component: nameList
     },
     {
-      path: '/',
+      path: '/api',
       name: 'apiFetch',
       component: apiFetch
     }
