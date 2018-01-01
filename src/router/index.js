@@ -10,6 +10,11 @@ export default new Router({
       path: '/',
       name: 'nameList',
       component: nameList
+    },
+    {
+      path: '/',
+      name: 'apiFetch',
+      component: apiFetch
     }
   ]
 })
