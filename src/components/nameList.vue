@@ -7,7 +7,7 @@ export default {
   name: 'nameList',
   data () {
     return {
-      msg: "hello world 2"
+      msg: 'hello world 2'
     }
   }
 }

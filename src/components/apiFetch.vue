@@ -1,18 +1,27 @@
 <template>
-<h1>{{msg}}</h1>
+  <div class="test">
+    <h1>{{title}}</h1>
+    <p>{{user.firstName}}</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'nameList',
-  data () {
+  name: 'test',
+  data() {
     return {
-      msg: "dani"
+      title: 'sample data',
+      user: {
+        firstName: 'john',
+        lastname: 'johny'
+      }
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
+
+
