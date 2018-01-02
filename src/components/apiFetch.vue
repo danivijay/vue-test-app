@@ -2,7 +2,11 @@
   <div class="test">
     <span v-html="title"></span>
     <p>{{user.firstName}}</p>
-    <p v-if="showHideTest">Test</p>
+    <ul>
+      <li v-for="item in items">{{item.title}}</li>
+    </ul>
+    <p v-if="showHideTest">Test 1</p>
+    <p v-else>Test 2</p>
   </div>
 </template>
 
@@ -16,7 +20,12 @@ export default {
         firstName: 'john',
         lastname: 'johny'
       },
-      showHideTest: false
+      showHideTest: false,
+      items: [
+        {title: 'item 1'},
+        {title: 'item 2'},
+        {title: 'item 3'}
+      ]
     }
   }
 }
