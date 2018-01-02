@@ -8,6 +8,7 @@
     </ul>
     <p v-if="showHideTest">Test 1</p>
     <p v-else>{{test2}}</p>
+    <button v-on:click="greet('hello world')">say greeting</button>
   </div>
 </template>
 
@@ -28,6 +29,11 @@ export default {
         {title: 'item 2'},
         {title: 'item 3'}
       ]
+    }
+  },
+  methods: {
+    greet: function(greeting){
+      alert(greeting);
     }
   }
 }
