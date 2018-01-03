@@ -10,6 +10,10 @@
     <p v-else>{{test2}}</p>
     <button v-on:click="greet('hello world')">say greeting</button>
     <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterPress">
+    <hr />
+    <input type="text" v-model="user.firstName">
+    <input type="text" v-model="user.lastName">
+    <h3>{{fullName}}</h3>
   </div>
 </template>
 
@@ -22,7 +26,7 @@ export default {
       test2: '',
       user: {
         firstName: 'john',
-        lastname: 'johny'
+        lastName: 'johny'
       },
       showHideTest: false,
       items: [
@@ -41,6 +45,11 @@ export default {
     },
     enterPress: function(){
       console.log('enterhit');
+    }
+  },
+  computed: {
+    fullName: function() {
+      return this.user.firstName + ' ' + this.user.lastName;
     }
   }
 }
