@@ -9,6 +9,7 @@
     <p v-if="showHideTest">Test 1</p>
     <p v-else>{{test2}}</p>
     <button v-on:click="greet('hello world')">say greeting</button>
+    <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterPress">
   </div>
 </template>
 
@@ -34,6 +35,12 @@ export default {
   methods: {
     greet: function(greeting){
       alert(greeting);
+    },
+    pressKey: function(e) {
+      console.log(e.target.value);
+    },
+    enterPress: function(){
+      console.log('enterhit');
     }
   }
 }
