@@ -1,42 +1,37 @@
 <template>
-  <div class="test">
+  <div class="apiFetch">
     <h2>{{title}}</h2>
+    <form v-on:submit="addUser">
+      <input type="text" v-model="newUser.name" placeholder="name">
+      <input type="text" v-model="newUser.email" placeholder="email">
+      <input type="submit" value="submit">
+    </form>
+    <ul>
+      <li v-for="user in users">
+        {{user.name}}: {{user.email}}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'test',
+  name: 'apiFetch',
   data() {
     return {
-      title: 'Sample API Fetch',
-      test2: '',
-      user: {
-        firstName: 'john',
-        lastName: 'johny'
-      },
-      showHideTest: false,
-      items: [
-        {title: 'item 1'},
-        {title: 'item 2'},
-        {title: 'item 3'}
+      title: "Api Fetching Test",
+      newUser: {},
+      users: [
+        { name: "john doe", email:"johndoe@gmail.com" , contacted: false},
+        { name: "foobar", email:"foebar@gmail.com" , contacted: false},
+        { name: "bar", email:"bar@gmail.com" , contacted: false}
       ]
     }
   },
   methods: {
-    greet: function(greeting){
-      alert(greeting);
-    },
-    pressKey: function(e) {
-      console.log(e.target.value);
-    },
-    enterPress: function(){
-      console.log('enterhit');
-    }
-  },
-  computed: {
-    fullName: function() {
-      return this.user.firstName + ' ' + this.user.lastName;
+    addUser: function(e){
+      console.log("add");
+      e.preventDefault();
     }
   }
 }
