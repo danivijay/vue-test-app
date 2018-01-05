@@ -26,11 +26,7 @@ export default {
     return {
       title: "Api Fetching Test",
       newUser: {},
-      users: [
-        { name: "john doe", email:"johndoe@gmail.com" , contacted: false},
-        { name: "foobar", email:"foebar@gmail.com" , contacted: false},
-        { name: "bar", email:"bar@gmail.com" , contacted: false}
-      ]
+      users: []
     }
   },
   methods: {
@@ -46,6 +42,12 @@ export default {
     deleteUser: function(user){
       this.users.splice(this.users.indexOf(user), 1);
     }
+  },
+  created: function(){
+    this.$http.get('https://jsonplaceholder.typicode.com/users')
+      .then(function(response){
+        this.users = response.data;
+      })
   }
 }
 </script>
